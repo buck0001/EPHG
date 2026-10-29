@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EPHG Limited | 24/7 Emergency Electrical, Plumbing, Heating &amp; Gas (Redesign Concept)</title>
+<meta name="description" content="Independent redesign concept for EPHG Limited: 24/7 emergency electrical, plumbing, heating and gas call-outs across much of the UK.">
+<meta name="theme-color" content="#f2efe9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%2292%2034%20259%20259%22%3E%3Crect%20x=%2292%22%20y=%2234%22%20width=%22259%22%20height=%22259%22%20rx=%2246%22%20fill=%22%231f1915%22/%3E%3Cg%20fill=%22none%22%20stroke=%22%23fffdf6%22%3E%3Ccircle%20cx=%22221.3%22%20cy=%22163.0%22%20r=%22115.5%22%20stroke-width=%228.0%22/%3E%3Crect%20x=%22124.25%22%20y=%2266.25%22%20width=%22193.5%22%20height=%22193.5%22%20stroke-width=%228.5%22/%3E%3C/g%3E%3Cpath%20fill=%22%23f5a800%22%20d=%22M153%20129H181.29V138.43H163.37V155.87H177.61V165.3H163.37V185.57H181.29V195H153ZM185.93%20129H201.2Q208.93%20129%20212.8%20133.15Q216.67%20137.3%20216.67%20145.31V151.82Q216.67%20159.83%20212.8%20163.98Q208.93%20168.13%20201.2%20168.13H196.3V195H185.93ZM201.2%20158.7Q203.75%20158.7%20205.02%20157.29Q206.29%20155.87%20206.29%20152.48V144.65Q206.29%20141.26%20205.02%20139.84Q203.75%20138.43%20201.2%20138.43H196.3V158.7ZM221.03%20129H231.4V155.87H242.52V129H252.89V195H242.52V165.3H231.4V195H221.03ZM258.57%20179.35V144.65Q258.57%20136.64%20262.53%20132.35Q266.49%20128.06%20274.04%20128.06Q281.58%20128.06%20285.54%20132.35Q289.5%20136.64%20289.5%20144.65V150.31H279.69V143.99Q279.69%20137.49%20274.32%20137.49Q268.95%20137.49%20268.95%20143.99V180.1Q268.95%20186.51%20274.32%20186.51Q279.69%20186.51%20279.69%20180.1V167.19H274.51V157.76H289.5V179.35Q289.5%20187.36%20285.54%20191.65Q281.58%20195.94%20274.04%20195.94Q266.49%20195.94%20262.53%20191.65Q258.57%20187.36%20258.57%20179.35Z%22/%3E%3C/svg%3E">
+<script>
+/* Set theme before first paint: saved choice, otherwise the visitor's system setting. */
+(function(){var d=document.documentElement,t;d.classList.add('js');
+try{t=localStorage.getItem('ephg-theme')}catch(e){}
+if(t!=='dark'&&t!=='light')t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+d.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#14110e':'#f2efe9';})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<noscript><style>[data-r],.ln>span{opacity:1!important;transform:none!important}#ld{display:none!important}mark{background-size:100% 100%!important}</style></noscript>
+<style>
+/* ===================== TOKENS ===================== */
+:root{
+  --amber:#f5a800;--amber-ink:#9a5b00;
+  --bg:#f2efe9;--bg2:#f7f5f1;--card:#ffffff;--line:#e6e3dd;--line2:#d3cec5;
+  --ink:#1f1915;--muted:#6b6661;--faint:#8d8883;--accent-text:#9a5b00;
+  --band:#1f1915;--on-band:#fffdf6;--on-band-muted:rgba(255,253,246,.72);--band-line:rgba(255,253,246,.16);
+  --sans:'Geist',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'Fragment Mono','IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --r-card:16px;--r-panel:24px;--r-pill:1440px;
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --bg:#14110e;--bg2:#1a1612;--card:#211c17;--line:#322c26;--line2:#4a4239;
+  --ink:#f2efe9;--muted:#aaa39a;--faint:#857e75;--accent-text:#f5a800;
+  --band:#0b0908;
+  color-scheme:dark;
+}
+
+/* ===================== BASE ===================== */
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{font-family:var(--sans);font-size:16px;line-height:1.6;background:var(--bg);color:var(--ink);overflow-x:hidden;transition:background-color .4s,color .4s}
+body.noscroll{overflow:hidden}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none;padding:0}
+::selection{background:var(--amber);color:#1f1915}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:300;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:var(--r-pill);transition:top .2s}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,3vw,40px)}
+svg:not([fill]){fill:currentColor}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.3px;text-transform:uppercase}
+
+/* view-transition circle wipe for the theme switch */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+
+/* reveals */
+.js [data-r]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms)}
+.js [data-r].in{opacity:1;transform:none}
+
+/* ===================== UI PIECES ===================== */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:12px 22px;border-radius:var(--r-pill);border:1px solid transparent;font-weight:500;font-size:16px;line-height:1.2;letter-spacing:.03em;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s var(--ease)}
+.pill svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.pill:hover svg.go{transform:translateX(4px)}
+.pill:active{transform:scale(.97)}
+.pill--amber{background:var(--amber);color:#1f1915}
+.pill--amber:hover{background:#ffbb25}
+.pill--solid{background:var(--ink);color:var(--bg)}
+.pill--solid:hover{background:var(--amber);color:#1f1915}
+.pill--ghost{border-color:var(--line2);color:var(--ink)}
+.pill--ghost:hover{background:var(--card);border-color:var(--ink)}
+.pill--white{background:var(--card);border-color:var(--line);color:var(--ink)}
+.pill--white:hover{border-color:var(--ink)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#1f1915;flex:none}
+.pill--white .dot,.status .dot{background:var(--amber)}
+.live{animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:var(--r-pill);padding:6px 14px 6px 10px;font:400 11px/1.4 var(--mono);letter-spacing:.3px;text-transform:uppercase;color:var(--ink)}
+.eyebrow svg{width:13px;height:13px;color:var(--ink)}
+.band .eyebrow{border-color:var(--band-line);color:var(--on-band)}.band .eyebrow svg{color:var(--on-band)}
+.status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:var(--r-pill);padding:6px 14px 6px 12px;font:400 11px/1.4 var(--mono);letter-spacing:.3px;text-transform:uppercase;background:var(--card)}
+h2.title{font-weight:500;font-size:clamp(2.2rem,5.2vw,4.25rem);line-height:1;letter-spacing:-.045em;margin-top:18px;text-wrap:balance}
+.lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.2rem);max-width:46ch;margin-top:20px}
+
+/* scroll progress */
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--amber);transform:scaleX(var(--p,0));transform-origin:left;z-index:120}
+
+/* ===================== LOADER ===================== */
+#ld{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#0b0908;color:#fffdf6;clip-path:circle(150% at 50% 50%);transition:clip-path .9s cubic-bezier(.65,0,.35,1);animation:ldGone .01s 3.6s forwards}
+#ld.done{clip-path:circle(0% at 50% 50%)}
+#ld svg{width:min(46vw,200px);height:auto;overflow:visible}
+#ld .d{fill:none;stroke:currentColor;stroke-width:6;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.65,0,.35,1) forwards}
+#ld .d2{animation-delay:.25s}
+#ld .t{fill:currentColor;opacity:0;animation:fade .6s .9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes ldGone{to{visibility:hidden}}
+
+/* ===================== HEADER ===================== */
+.hdr{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background-color .4s}
+.hdr.stuck{border-color:var(--line)}
+.hdr-in{display:flex;align-items:center;gap:24px;height:68px}
+.logo{display:flex;align-items:center;flex:none}
+.mark{width:50px;height:50px;color:var(--ink);transition:transform .6s var(--ease)}
+.logo:hover .mark{transform:rotate(90deg)}
+.nav{display:none;gap:30px;margin-left:12px}
+.nav a{font:400 11px/1 var(--mono);letter-spacing:.3px;text-transform:uppercase;padding:10px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.theme{position:relative;width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;overflow:hidden;transition:background-color .25s,border-color .25s}
+.theme:hover{background:var(--card);border-color:var(--ink)}
+.theme svg{position:absolute;width:20px;height:20px;transition:transform .6s var(--ease),opacity .4s}
+.theme .moon{transform:translateY(150%) rotate(-60deg);opacity:0}
+[data-theme="dark"] .theme .sun{transform:translateY(-150%) rotate(60deg);opacity:0}
+[data-theme="dark"] .theme .moon{transform:none;opacity:1}
+.hdr-call{display:none}
+.burger{width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);display:grid;place-content:center;gap:6px}
+.burger i{display:block;width:18px;height:1.5px;background:var(--ink)}
+@media(min-width:960px){.nav{display:flex}.hdr-call{display:inline-flex;min-height:42px;padding:9px 18px;font-size:15px}.burger{display:none}}
+
+.menu{position:fixed;inset:0;z-index:150;background:var(--band);color:var(--on-band);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,40px) 28px;clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .7s cubic-bezier(.65,0,.35,1),visibility 0s .7s;visibility:hidden}
+.menu.open{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible;transition:clip-path .7s cubic-bezier(.65,0,.35,1),visibility 0s 0s}
+.menu-top{display:flex;justify-content:space-between;align-items:center;height:60px}
+.menu .mark{color:var(--on-band)}
+.menu-x{width:46px;height:46px;border-radius:50%;border:1px solid var(--band-line);display:grid;place-items:center}
+.menu-x svg{width:20px;height:20px}
+.menu nav{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.menu nav a{font-size:clamp(2.4rem,11vw,4.5rem);font-weight:500;letter-spacing:-.045em;line-height:1.05;opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease),color .2s}
+.menu.open nav a{opacity:1;transform:none;transition-delay:calc(.2s + var(--i)*.07s)}
+.menu nav a:hover{color:var(--amber)}
+.menu-foot{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--band-line);padding-top:22px}
+.menu-foot small{color:var(--on-band-muted);font-size:14px}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;opacity:.55;-webkit-mask-image:radial-gradient(70% 70% at 70% 45%,#000,transparent);mask-image:radial-gradient(70% 70% at 70% 45%,#000,transparent);pointer-events:none}
+.hero-in{position:relative;display:grid;gap:12px;align-items:center;padding-block:28px 56px}
+.hero-copy{position:relative;z-index:2}
+.display{font-weight:400;font-size:clamp(3rem,13.4vw,7.5rem);line-height:.93;letter-spacing:-.067em;margin-top:26px}
+.ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.ln>span{display:inline-block;transform:translateY(112%);transition:transform 1.1s var(--ease);transition-delay:calc(.15s + var(--i)*.12s)}
+.ready .ln>span{transform:none}
+mark{color:var(--ink);background:linear-gradient(var(--amber),var(--amber)) left/0% 100% no-repeat;border-radius:.14em;padding:0 .1em;margin-inline:-.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .8s cubic-bezier(.65,0,.35,1) 1s,color .2s 1.25s}
+.ready mark{background-size:100% 100%;color:#1f1915}
+.hero-sub{color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:34ch;margin-top:28px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{margin-top:22px;color:var(--faint);font:400 11px/1.5 var(--mono);letter-spacing:.3px;text-transform:uppercase}
+.hero-art-wrap{width:min(100%,640px);margin-inline:auto}
+.hero-art{position:relative;transform:translate(calc(var(--px,0)*12px),calc(var(--py,0)*12px));transition:transform .5s var(--ease)}
+.art{width:100%;height:auto;overflow:visible;color:var(--ink)}
+@media(min-width:960px){.hero-in{grid-template-columns:1.08fr .92fr;padding-block:36px 72px;min-height:calc(100svh - 68px - 58px)}}
+
+/* spec-plate strip */
+.strip{border-block:1px solid var(--line);overflow:hidden;background:var(--bg)}
+.strip-track{display:flex;width:max-content;animation:marq 44s linear infinite}
+.strip:hover .strip-track{animation-play-state:paused}
+.strip ul{display:flex}
+.strip li{display:flex;align-items:center;gap:10px;padding:19px 28px;border-right:1px solid var(--line);font:400 11px/1 var(--mono);letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.strip li b{font-weight:400;color:var(--faint)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===================== TRIAGE ===================== */
+.sec{padding-block:clamp(72px,10vw,128px)}
+.triage-grid{display:grid;gap:28px;margin-top:48px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:150px;padding:20px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--card);text-align:left;position:relative;transition:background-color .3s,color .3s,border-color .3s,transform .4s var(--ease)}
+.tile:hover{transform:translateY(-4px);border-color:var(--ink)}
+.tile .ico{width:34px;height:34px}
+.tile b{display:block;font-weight:500;font-size:clamp(1.05rem,1.8vw,1.35rem);letter-spacing:-.03em;line-height:1.15}
+.tile small{display:block;margin-top:6px;font:400 11px/1.4 var(--mono);letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}
+.tile[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tile[aria-selected="true"] small{color:inherit;opacity:.7}
+.tile[aria-selected="true"]::after{content:"";position:absolute;top:18px;right:18px;width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-panel);padding:clamp(22px,3.4vw,40px);min-height:100%;display:flex;flex-direction:column;gap:22px}
+.panel.pop{animation:pop .55s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}}
+.panel h3{font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.04em;line-height:1.05}
+.steps{display:grid;gap:14px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:1.02rem}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:400 11px/1 var(--mono);letter-spacing:.3px;border:1px solid var(--line2);border-radius:var(--r-pill);padding:7px 0;text-align:center;margin-top:2px}
+.who{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;border-top:1px solid var(--line);padding-top:18px}
+.who .mono{color:var(--faint)}
+.who b{font-weight:500}
+.panel-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto}
+.fine{font:400 11px/1.5 var(--mono);letter-spacing:.3px;text-transform:uppercase;color:var(--faint)}
+@media(min-width:960px){.triage-grid{grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch}}
+
+/* ===================== MANIFESTO ===================== */
+.manifesto{background:var(--bg2);border-block:1px solid var(--line);overflow:hidden;transition:background-color .4s}
+.mani-grid{display:grid;gap:36px;align-items:center}
+.mani-art{width:min(100%,560px);margin-inline:auto}
+.stmt{font-weight:500;font-size:clamp(1.7rem,3.4vw,2.9rem);line-height:1.12;letter-spacing:-.045em}
+.stmt .w{color:var(--line2);transition:color .35s}
+.stmt .w.on{color:var(--ink)}
+.duo{display:grid;gap:12px;margin-top:36px}
+.duo div{border:1px solid var(--line);background:var(--card);border-radius:var(--r-card);padding:22px}
+.duo b{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.3px;text-transform:uppercase;color:var(--accent-text);margin-bottom:8px}
+.duo p{color:var(--muted);font-size:.98rem}
+@media(min-width:960px){.mani-grid{grid-template-columns:.95fr 1.05fr;gap:64px}.duo{grid-template-columns:1fr 1fr}}
+
+/* ===================== SERVICES ===================== */
+.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.svc-list{margin-top:52px;border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:76px 1fr 48px;gap:18px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .45s var(--ease),background-color .3s}
+.svc .n{display:none;font:400 11px/1 var(--mono);color:var(--faint);letter-spacing:.3px}
+.svc-ico{width:76px;height:76px;border-radius:var(--r-card);border:1px solid var(--line);background:var(--card);display:grid;place-items:center;transition:background-color .35s,border-color .35s}
+.svc-ico svg{width:40px;height:40px;overflow:visible;color:var(--ink);transition:transform .5s var(--ease)}
+.svc h3{font-weight:500;font-size:clamp(1.5rem,3.6vw,2.7rem);letter-spacing:-.045em;line-height:1.05;transition:transform .45s var(--ease)}
+.svc p{color:var(--muted);max-width:54ch;margin-top:8px;font-size:1rem}
+.svc .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--faint)}
+.svc-go{width:48px;height:48px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;overflow:hidden;transition:background-color .3s,color .3s,border-color .3s}
+.svc-go svg{width:20px;height:20px;transition:transform .4s var(--ease)}
+.svc:hover .svc-ico,.svc:focus-visible .svc-ico{background:var(--amber);border-color:var(--amber)}
+.svc:hover .svc-ico svg,.svc:focus-visible .svc-ico svg{color:#1f1915;transform:scale(1.12) rotate(-5deg)}
+.svc:hover h3{transform:translateX(8px)}
+.svc:hover .svc-go{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.svc:hover .svc-go svg{transform:translateX(3px)}
+@media(min-width:960px){.svc{grid-template-columns:44px 76px 1fr 48px;gap:28px}.svc .n{display:block}}
+/* icon life */
+@keyframes flick{0%,100%{opacity:1}46%{opacity:1}48%{opacity:.25}50%{opacity:1}54%{opacity:.4}56%{opacity:1}}
+@keyframes lick{0%,100%{transform:scale(1,1)}50%{transform:scale(.94,1.07) skewX(-2deg)}}
+@keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(12px);opacity:0}}
+@keyframes heat{0%{transform:translateY(2px);opacity:0}30%{opacity:.9}100%{transform:translateY(-6px);opacity:0}}
+.fx-bolt{animation:flick 3.2s infinite}
+.fx-flame{transform-origin:50% 90%;animation:lick 1.6s ease-in-out infinite}
+.drop{animation:drip 1.8s ease-in infinite}.drop:nth-of-type(2){animation-delay:.6s}.drop:nth-of-type(3){animation-delay:1.2s}
+.wave{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;animation:heat 2.4s ease-out infinite}.wave:nth-of-type(2){animation-delay:.8s}.wave:nth-of-type(3){animation-delay:1.6s}
+
+/* ===================== HOW IT WORKS ===================== */
+.how{background:var(--bg2);border-block:1px solid var(--line);transition:background-color .4s}
+.frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:clamp(24px,4vw,48px);margin-top:48px}
+.flow{position:relative;display:grid;gap:34px;counter-reset:f}
+.flow::before,.flow::after{content:"";position:absolute;left:21px;top:22px;bottom:22px;width:2px;background:var(--line2)}
+.flow::after{background:var(--amber);transform:scaleY(var(--fp,0));transform-origin:top;transition:transform 1.8s cubic-bezier(.65,0,.35,1)}
+.flow li{position:relative;align-content:start;display:grid;grid-template-columns:44px 1fr;gap:20px;align-items:start}
+.flow .node{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:var(--card);border:2px solid var(--line2);display:grid;place-items:center;font:400 12px/1 var(--mono);transition:background-color .4s,border-color .4s,color .4s;transition-delay:calc(var(--i)*.45s)}
+.flow.in .node{background:var(--amber);border-color:var(--amber);color:#1f1915}
+.flow h3{font-weight:500;font-size:1.3rem;letter-spacing:-.03em;line-height:1.2;padding-top:8px}
+.flow p{color:var(--muted);margin-top:6px;font-size:.98rem;max-width:34ch}
+@media(min-width:860px){
+  .flow{grid-template-columns:repeat(4,1fr);gap:28px}
+  .flow::before,.flow::after{left:22px;right:calc(25% - 22px);top:21px;bottom:auto;width:auto;height:2px}
+  .flow::after{transform:scaleX(var(--fp,0));transform-origin:left}
+  .flow li{grid-template-columns:1fr;gap:20px}
+}
+
+/* ===================== STATS (load meters) ===================== */
+.band{background:var(--band);color:var(--on-band);transition:background-color .4s}
+.stats-grid{display:grid;gap:14px;margin-top:48px}
+.meter-card{background:rgba(255,253,246,.06);border:1px solid var(--band-line);border-radius:var(--r-card);padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:14px}
+.meter-card .big{font-weight:400;font-size:clamp(3rem,6vw,4.5rem);letter-spacing:-.06em;line-height:1}
+.meter-card .big small{font-size:.38em;letter-spacing:-.02em;margin-left:6px;color:var(--on-band-muted)}
+.meter-card .cap{color:var(--on-band-muted);font:400 11px/1.5 var(--mono);letter-spacing:.3px;text-transform:uppercase}
+.meter{display:flex;gap:3px;height:6px;margin-top:auto}
+.meter i{flex:1;background:rgba(255,253,246,.2);border-radius:1px;transition:background-color .3s;transition-delay:calc(var(--k)*45ms)}
+.meter.in i{background:var(--amber)}
+.meter.icons{height:36px;gap:8px}
+.meter.icons i{display:grid;place-items:center;border-radius:8px;color:var(--on-band);background:rgba(255,253,246,.12)}
+.meter.icons i svg{width:20px;height:20px}
+.meter.icons.in i{background:var(--amber);color:#1f1915}
+.meter.years i:last-child{animation:blink 1.6s infinite}
+@media(min-width:760px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ===================== FAQ ===================== */
+.faq-grid{display:grid;gap:40px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;cursor:pointer;font-weight:500;font-size:clamp(1.15rem,2vw,1.5rem);letter-spacing:-.03em;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq .plus{position:relative;flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);transition:transform .4s var(--ease),background-color .3s}
+.faq .plus::before,.faq .plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.faq .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] .plus{transform:rotate(45deg);background:var(--amber);border-color:var(--amber);color:#1f1915}
+.faq details p{color:var(--muted);padding:0 56px 26px 0;max-width:62ch}
+.faq details p a{color:var(--accent-text);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:960px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:72px}.faq-side{position:sticky;top:110px;align-self:start}}
+
+/* ===================== CONTACT / FOOTER ===================== */
+.contact-grid{display:grid;gap:44px;align-items:start}
+.cta-title{font-weight:400;font-size:clamp(3rem,9.5vw,7.2rem);line-height:.93;letter-spacing:-.067em;margin-top:22px}
+.bigtel{display:inline-block;margin-top:34px;font-weight:500;font-size:clamp(1.8rem,4.4vw,3rem);letter-spacing:-.04em;line-height:1.1;border-bottom:2px solid var(--amber);padding-bottom:4px}
+.bigtel:hover{color:var(--amber)}
+.contact-list{margin-top:28px;display:grid;gap:6px;color:var(--on-band-muted);font-size:1rem;font-style:normal}
+.contact-list a:hover{color:var(--on-band)}
+.form-frame{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-card);padding:clamp(22px,3.4vw,36px)}
+[data-theme="dark"] .form-frame{border-color:var(--band-line)}
+.form-frame h3{font-weight:500;font-size:1.7rem;letter-spacing:-.04em;line-height:1.1}
+.form-frame form{display:grid;gap:18px;margin-top:22px}
+label,.lab{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=tel],input[type=email],textarea{display:block;width:100%;margin-top:8px;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:8px;padding:12px 16px;resize:vertical;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--amber)}
+.row2{display:grid;gap:18px}
+@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chips label{margin:0;cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 13px;border:1px solid var(--line2);border-radius:var(--r-pill);font:500 14.5px/1 var(--sans);letter-spacing:0;text-transform:none;color:var(--ink);transition:background-color .25s,border-color .25s,color .25s}
+.chips span svg{width:16px;height:16px}
+.chips label:hover span{border-color:var(--ink)}
+.chips input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chips input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
+.err{color:var(--accent-text);font-size:14px;min-height:20px}
+.ok{display:none;text-align:center;padding:18px 0}
+.ok.show{display:block}
+.ok i{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--amber);color:#1f1915;margin:0 auto 16px}
+.ok i svg{width:26px;height:26px}
+.ok b{display:block;font-size:1.3rem;font-weight:500;letter-spacing:-.03em}
+.ok p{color:var(--muted);margin:8px 0 20px}
+@media(min-width:960px){.contact-grid{grid-template-columns:1.05fr .95fr;gap:72px}}
+
+footer.band{border-top:1px solid var(--band-line)}
+.foot-grid{display:grid;gap:40px;padding-block:64px 44px}
+.lockup{width:min(100%,330px);height:auto;color:var(--on-band)}
+.foot-grid h4{font:400 11px/1 var(--mono);letter-spacing:.3px;text-transform:uppercase;color:var(--on-band-muted);margin-bottom:18px}
+.foot-grid ul{display:grid;gap:12px;font-size:15px;color:rgba(255,253,246,.88)}
+.foot-grid a:hover{color:var(--amber)}
+.foot-blurb{margin-top:20px;color:var(--on-band-muted);font-size:15px;max-width:36ch}
+.foot-bar{display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--band-line);padding-block:26px 34px;color:var(--on-band-muted);font-size:14px}
+.foot-bar nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.foot-bar a:hover{color:var(--on-band)}
+@media(min-width:860px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr 1fr}.foot-bar{flex-direction:row;justify-content:space-between;align-items:center}}
+
+/* mobile call bar */
+.callbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;transform:translateY(160%);transition:transform .5s var(--ease)}
+.callbar.show{transform:none}
+.callbar .pill{width:100%;min-height:54px;font-size:17px}
+@media(min-width:860px){.callbar{display:none}}
+@media(max-width:859px){footer.band{padding-bottom:84px}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  .strip-track{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ SHARED VECTOR DEFS (logo traced from the supplied PNG) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <path id="g-ephg" d="M153 129H181.29V138.43H163.37V155.87H177.61V165.3H163.37V185.57H181.29V195H153ZM185.93 129H201.2Q208.93 129 212.8 133.15Q216.67 137.3 216.67 145.31V151.82Q216.67 159.83 212.8 163.98Q208.93 168.13 201.2 168.13H196.3V195H185.93ZM201.2 158.7Q203.75 158.7 205.02 157.29Q206.29 155.87 206.29 152.48V144.65Q206.29 141.26 205.02 139.84Q203.75 138.43 201.2 138.43H196.3V158.7ZM221.03 129H231.4V155.87H242.52V129H252.89V195H242.52V165.3H231.4V195H221.03ZM258.57 179.35V144.65Q258.57 136.64 262.53 132.35Q266.49 128.06 274.04 128.06Q281.58 128.06 285.54 132.35Q289.5 136.64 289.5 144.65V150.31H279.69V143.99Q279.69 137.49 274.32 137.49Q268.95 137.49 268.95 143.99V180.1Q268.95 186.51 274.32 186.51Q279.69 186.51 279.69 180.1V167.19H274.51V157.76H289.5V179.35Q289.5 187.36 285.54 191.65Q281.58 195.94 274.04 195.94Q266.49 195.94 262.53 191.65Q258.57 187.36 258.57 179.35Z"/>
+  <path id="g-limited" d="M199 207.5H201.04V218.64H204.4V220.5H199ZM205.61 207.5H207.65V220.5H205.61ZM209.39 207.5H212.31L213.61 216.8H213.65L214.95 207.5H217.86V220.5H215.93V210.66H215.89L214.41 220.5H212.7L211.21 210.66H211.18V220.5H209.39ZM219.61 207.5H221.65V220.5H219.61ZM224.99 209.36H222.85V207.5H229.17V209.36H227.03V220.5H224.99ZM230.37 207.5H235.94V209.36H232.42V212.79H235.22V214.65H232.42V218.64H235.94V220.5H230.37ZM237.33 207.5H240.45Q241.98 207.5 242.74 208.32Q243.5 209.13 243.5 210.71V217.29Q243.5 218.87 242.74 219.68Q241.98 220.5 240.45 220.5H237.33ZM240.42 218.64Q240.92 218.64 241.19 218.35Q241.46 218.05 241.46 217.38V210.62Q241.46 209.95 241.19 209.65Q240.92 209.36 240.42 209.36H239.38V218.64Z"/>
+  <path id="g-tag" d="M62 297.74H60V296H65.93V297.74H63.92V308.2H62ZM66.81 296H68.73V300.97H70.79V296H72.7V308.2H70.79V302.71H68.73V308.2H66.81ZM74.1 296H76.01V308.2H74.1ZM77.41 296H79.81L81.68 303.3H81.71V296H83.42V308.2H81.45L79.15 299.29H79.12V308.2H77.41ZM84.81 296H86.73V301.14L89.17 296H91.09L88.8 300.48L91.12 308.2H89.12L87.5 302.76L86.73 304.31V308.2H84.81ZM94.61 305.31V298.89Q94.61 297.43 95.36 296.63Q96.1 295.83 97.52 295.83Q98.93 295.83 99.68 296.63Q100.43 297.43 100.43 298.89V305.31Q100.43 306.77 99.68 307.57Q98.93 308.37 97.52 308.37Q96.1 308.37 95.36 307.57Q94.61 306.77 94.61 305.31ZM98.51 305.43V298.77Q98.51 297.57 97.52 297.57Q96.52 297.57 96.52 298.77V305.43Q96.52 306.63 97.52 306.63Q98.51 306.63 98.51 305.43ZM101.61 305.31V296H103.53V305.45Q103.53 306.07 103.78 306.35Q104.03 306.63 104.5 306.63Q104.97 306.63 105.23 306.35Q105.48 306.07 105.48 305.45V296H107.33V305.31Q107.33 306.79 106.6 307.58Q105.86 308.37 104.47 308.37Q103.07 308.37 102.34 307.58Q101.61 306.79 101.61 305.31ZM110.15 297.74H108.15V296H114.07V297.74H112.07V308.2H110.15ZM114.63 305.31V304.61H116.44V305.45Q116.44 306.63 117.43 306.63Q117.92 306.63 118.17 306.34Q118.43 306.06 118.43 305.41Q118.43 304.64 118.08 304.06Q117.73 303.48 116.79 302.66Q115.6 301.61 115.13 300.77Q114.66 299.92 114.66 298.86Q114.66 297.41 115.39 296.62Q116.13 295.83 117.52 295.83Q118.9 295.83 119.6 296.62Q120.31 297.41 120.31 298.89V299.4H118.5V298.77Q118.5 298.14 118.25 297.86Q118.01 297.57 117.54 297.57Q116.58 297.57 116.58 298.74Q116.58 299.4 116.94 299.97Q117.29 300.55 118.23 301.37Q119.44 302.41 119.89 303.27Q120.34 304.12 120.34 305.27Q120.34 306.77 119.6 307.57Q118.86 308.37 117.45 308.37Q116.06 308.37 115.34 307.58Q114.63 306.79 114.63 305.31ZM121.41 296H123.32V308.2H121.41ZM124.72 296H127.64Q129.07 296 129.79 296.77Q130.5 297.53 130.5 299.02V305.18Q130.5 306.67 129.79 307.43Q129.07 308.2 127.64 308.2H124.72ZM127.61 306.46Q128.08 306.46 128.33 306.18Q128.59 305.9 128.59 305.27V298.93Q128.59 298.3 128.33 298.02Q128.08 297.74 127.61 297.74H126.63V306.46ZM131.76 296H136.98V297.74H133.67V300.97H136.3V302.71H133.67V306.46H136.98V308.2H131.76ZM142.3 297.74H140.29V296H146.22V297.74H144.21V308.2H142.3ZM147.11 296H149.02V300.97H151.08V296H153V308.2H151.08V302.71H149.02V308.2H147.11ZM154.39 296H159.62V297.74H156.31V300.97H158.94V302.71H156.31V306.46H159.62V308.2H154.39ZM163.43 296H166.33Q167.81 296 168.49 296.69Q169.17 297.38 169.17 298.81V299.29Q169.17 300.24 168.86 300.83Q168.56 301.42 167.93 301.68V301.72Q169.36 302.2 169.36 304.26V305.31Q169.36 306.72 168.62 307.46Q167.88 308.2 166.45 308.2H163.43ZM166.1 300.97Q166.68 300.97 166.96 300.67Q167.25 300.37 167.25 299.68V299Q167.25 298.34 167.01 298.04Q166.78 297.74 166.27 297.74H165.35V300.97ZM166.45 306.46Q166.95 306.46 167.2 306.19Q167.44 305.92 167.44 305.25V304.19Q167.44 303.35 167.15 303.03Q166.87 302.71 166.2 302.71H165.35V306.46ZM170.3 305.31V298.89Q170.3 297.43 171.05 296.63Q171.8 295.83 173.21 295.83Q174.62 295.83 175.37 296.63Q176.12 297.43 176.12 298.89V305.31Q176.12 306.77 175.37 307.57Q174.62 308.37 173.21 308.37Q171.8 308.37 171.05 307.57Q170.3 306.77 170.3 305.31ZM174.2 305.43V298.77Q174.2 297.57 173.21 297.57Q172.22 297.57 172.22 298.77V305.43Q172.22 306.63 173.21 306.63Q174.2 306.63 174.2 305.43ZM179.06 301.96 176.96 296H178.98L180.27 299.94H180.3L181.63 296H183.44L181.33 301.96L183.54 308.2H181.52L180.13 303.95H180.09L178.66 308.2H176.85ZM187.17 296H190.06Q191.54 296 192.22 296.69Q192.9 297.38 192.9 298.81V299.29Q192.9 300.24 192.6 300.83Q192.29 301.42 191.66 301.68V301.72Q193.09 302.2 193.09 304.26V305.31Q193.09 306.72 192.35 307.46Q191.61 308.2 190.18 308.2H187.17ZM189.83 300.97Q190.41 300.97 190.7 300.67Q190.98 300.37 190.98 299.68V299Q190.98 298.34 190.75 298.04Q190.51 297.74 190.01 297.74H189.08V300.97ZM190.18 306.46Q190.69 306.46 190.93 306.19Q191.17 305.92 191.17 305.25V304.19Q191.17 303.35 190.89 303.03Q190.6 302.71 189.94 302.71H189.08V306.46ZM194.1 305.31V296H196.02V305.45Q196.02 306.07 196.27 306.35Q196.52 306.63 196.99 306.63Q197.47 306.63 197.72 306.35Q197.97 306.07 197.97 305.45V296H199.82V305.31Q199.82 306.79 199.09 307.58Q198.35 308.37 196.96 308.37Q195.57 308.37 194.83 307.58Q194.1 306.79 194.1 305.31ZM202.64 297.74H200.64V296H206.56V297.74H204.56V308.2H202.64ZM211.68 296H214.28L216.27 308.2H214.35L214 305.78V305.81H211.82L211.47 308.2H209.7ZM213.77 304.16 212.92 298.13H212.89L212.05 304.16ZM217.15 296H219.07V306.46H222.23V308.2H217.15ZM222.66 296H224.51L225.36 305.38H225.4L226.3 296H228.39L229.3 305.38H229.34L230.19 296H231.85L230.61 308.2H228.22L227.35 299.97H227.31L226.44 308.2H223.9ZM234.27 296H236.86L238.85 308.2H236.93L236.58 305.78V305.81H234.41L234.06 308.2H232.28ZM236.36 304.16 235.5 298.13H235.47L234.63 304.16ZM241.5 303.01 239.18 296H241.22L242.53 300.48H242.56L243.87 296H245.73L243.42 303.01V308.2H241.5ZM246.24 305.31V304.61H248.05V305.45Q248.05 306.63 249.04 306.63Q249.53 306.63 249.78 306.34Q250.04 306.06 250.04 305.41Q250.04 304.64 249.69 304.06Q249.34 303.48 248.4 302.66Q247.21 301.61 246.74 300.77Q246.27 299.92 246.27 298.86Q246.27 297.41 247 296.62Q247.74 295.83 249.13 295.83Q250.51 295.83 251.21 296.62Q251.92 297.41 251.92 298.89V299.4H250.11V298.77Q250.11 298.14 249.86 297.86Q249.62 297.57 249.15 297.57Q248.19 297.57 248.19 298.74Q248.19 299.4 248.55 299.97Q248.9 300.55 249.85 301.37Q251.05 302.41 251.5 303.27Q251.95 304.12 251.95 305.27Q251.95 306.77 251.21 307.57Q250.47 308.37 249.06 308.37Q247.67 308.37 246.95 307.58Q246.24 306.79 246.24 305.31ZM255.44 305.31V304.61H257.25V305.45Q257.25 306.63 258.24 306.63Q258.73 306.63 258.98 306.34Q259.24 306.06 259.24 305.41Q259.24 304.64 258.89 304.06Q258.54 303.48 257.6 302.66Q256.41 301.61 255.94 300.77Q255.47 299.92 255.47 298.86Q255.47 297.41 256.2 296.62Q256.94 295.83 258.33 295.83Q259.71 295.83 260.41 296.62Q261.12 297.41 261.12 298.89V299.4H259.31V298.77Q259.31 298.14 259.06 297.86Q258.82 297.57 258.35 297.57Q257.39 297.57 257.39 298.74Q257.39 299.4 257.75 299.97Q258.1 300.55 259.05 301.37Q260.25 302.41 260.7 303.27Q261.15 304.12 261.15 305.27Q261.15 306.77 260.41 307.57Q259.67 308.37 258.26 308.37Q256.87 308.37 256.15 307.58Q255.44 306.79 255.44 305.31ZM263.71 297.74H261.71V296H267.64V297.74H265.63V308.2H263.71ZM270.01 296H272.6L274.59 308.2H272.67L272.32 305.78V305.81H270.14L269.8 308.2H268.02ZM272.1 304.16 271.24 298.13H271.21L270.37 304.16ZM277.24 303.01 274.92 296H276.96L278.26 300.48H278.3L279.61 296H281.47L279.15 303.01V308.2H277.24ZM284.61 296H286.45L287.31 305.38H287.34L288.25 296H290.34L291.25 305.38H291.28L292.14 296H293.79L292.55 308.2H290.17L289.29 299.97H289.26L288.39 308.2H285.84ZM294.73 296H296.65V308.2H294.73ZM299.54 297.74H297.54V296H303.46V297.74H301.46V308.2H299.54ZM304.35 296H306.27V300.97H308.32V296H310.24V308.2H308.32V302.71H306.27V308.2H304.35ZM311.63 296H313.55V308.2H311.63ZM314.94 296H317.35L319.21 303.3H319.25V296H320.96V308.2H318.99L316.69 299.29H316.65V308.2H314.94ZM326.6 297.74H324.6V296H330.52V297.74H328.52V308.2H326.6ZM331.41 296H333.33V300.97H335.38V296H337.3V308.2H335.38V302.71H333.33V308.2H331.41ZM338.69 296H343.92V297.74H340.61V300.97H343.24V302.71H340.61V306.46H343.92V308.2H338.69ZM347.61 305.38V298.82Q347.61 297.39 348.34 296.61Q349.06 295.83 350.44 295.83Q351.81 295.83 352.54 296.61Q353.26 297.39 353.26 298.82V300.11H351.45V298.7Q351.45 297.57 350.49 297.57Q349.53 297.57 349.53 298.7V305.52Q349.53 306.63 350.49 306.63Q351.45 306.63 351.45 305.52V303.65H353.26V305.38Q353.26 306.81 352.54 307.59Q351.81 308.37 350.44 308.37Q349.06 308.37 348.34 307.59Q347.61 306.81 347.61 305.38ZM354.38 296H356.29V308.2H354.38ZM357.69 296H360.53Q362.01 296 362.69 296.69Q363.37 297.38 363.37 298.81V299.56Q363.37 301.46 362.11 301.96V302Q362.81 302.2 363.1 302.85Q363.38 303.49 363.38 304.57V306.72Q363.38 307.24 363.42 307.56Q363.45 307.89 363.59 308.2H361.64Q361.54 307.9 361.5 307.64Q361.47 307.38 361.47 306.7V304.47Q361.47 303.63 361.2 303.3Q360.93 302.97 360.26 302.97H359.6V308.2H357.69ZM360.3 301.23Q360.87 301.23 361.16 300.93Q361.45 300.64 361.45 299.94V299Q361.45 298.34 361.21 298.04Q360.98 297.74 360.47 297.74H359.6V301.23ZM364.55 305.38V298.82Q364.55 297.39 365.27 296.61Q366 295.83 367.37 295.83Q368.75 295.83 369.47 296.61Q370.2 297.39 370.2 298.82V300.11H368.39V298.7Q368.39 297.57 367.43 297.57Q366.47 297.57 366.47 298.7V305.52Q366.47 306.63 367.43 306.63Q368.39 306.63 368.39 305.52V303.65H370.2V305.38Q370.2 306.81 369.47 307.59Q368.75 308.37 367.37 308.37Q366 308.37 365.27 307.59Q364.55 306.81 364.55 305.38ZM371.31 296H373.23V306.46H376.38V308.2H371.31ZM377.27 296H382.5V297.74H379.19V300.97H381.82V302.71H379.19V306.46H382.5V308.2H377.27Z"/>
+  <g id="g-shapes" fill="none" stroke="currentColor">
+    <circle cx="221.3" cy="163.0" r="115.5" stroke-width="6.0"/>
+    <rect x="124.25" y="66.25" width="193.5" height="193.5" stroke-width="6.5"/>
+  </g>
+  <symbol id="ic-bolt" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.6 1 5 13.3h5.7L9.1 23 19 9.7h-6.1L13.6 1Z"/></symbol>
+  <symbol id="ic-tap" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 2.6h10v2.4H13.2v2.7C17.6 8.3 21 11 21 15.2V21h-5v-5.8c0-1.3-1-2.1-2.4-2.1H9.4C8 13.1 7 13.9 7 15.2V21H3v-5.8C3 11 6.6 8.2 10.8 7.7V5H7V2.6Z"/></symbol>
+  <symbol id="ic-rad" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4.5 4h15A1.5 1.5 0 0 1 21 5.5V16.5A1.5 1.5 0 0 1 19.5 18h-15A1.5 1.5 0 0 1 3 16.5V5.5A1.5 1.5 0 0 1 4.5 4ZM5.6 6.2v9.6h1.2V6.2H5.6Zm3.4 0v9.6h1.2V6.2H9Zm3.4 0v9.6h1.2V6.2h-1.2Zm3.4 0v9.6H17V6.2h-1.2ZM5 18.4h2.6V21H5v-2.6Zm11.4 0H19V21h-2.6v-2.6Z"/></symbol>
+  <symbol id="ic-flame" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.3 1C13 4.8 18.6 7.6 18.6 13.4A6.6 6.6 0 0 1 12 20 6.6 6.6 0 0 1 5.4 13.4c0-2.6 1.3-4.3 2.8-5.5.1 1.7.9 2.9 2 3.5C9.7 8.3 10.7 4.2 12.3 1ZM12 14.6c-1.2 1.4-1.9 2.3-1.9 3.2a1.9 1.9 0 0 0 3.8 0c0-.9-.7-1.8-1.9-3.2Z"/></symbol>
+  <g id="g-icons">
+    <use href="#ic-bolt" x="185" y="94.6" width="17.02" height="17.02"/>
+    <use href="#ic-tap" x="203.5" y="94.6" width="17.02" height="17.02"/>
+    <use href="#ic-rad" x="222" y="94.6" width="17.02" height="17.02"/>
+    <use href="#ic-flame" x="240.2" y="94.6" width="17.02" height="17.02"/>
+  </g>
+  <g id="g-face"><g transform="translate(210.3 8.6)"><path fill-rule="evenodd" d="M11 2.8C5.6 2.8 1.6 6.2 1.6 11.4v2.9C1.6 19.8 5.9 23.9 11 23.9s9.4-4.1 9.4-9.6v-2.9C20.4 6.2 16.4 2.8 11 2.8Z M10.4 3.2C10.6 1.8 11.9.7 13.8.2c-.5.9-.4 1.7.1 2.6Z M0 0Z M0 0Z M3.7 10.1C6.8 10.6 9.4 10.6 11 12.7c1.6-2.1 4.2-2.1 7.3-2.6.5 1.7.7 3.4.5 5.1C18.4 19.3 15.2 22 11 22s-7.4-2.7-7.8-6.8c-.2-1.7 0-3.4.5-5.1Z"/><circle cx="7.6" cy="14.9" r="1.2"/><circle cx="14.4" cy="14.9" r="1.2"/><ellipse cx="11" cy="19" rx="1.4" ry=".75"/></g></g>
+  <symbol id="ui-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ui-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ui-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ui-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+ </defs>
+</svg>
+
+<!-- ============ LOADER: the mark draws itself ============ -->
+<div id="ld" aria-hidden="true">
+  <svg viewBox="99 41 245 245">
+    <circle class="d" pathLength="1" cx="221.3" cy="163.0" r="115.5"/>
+    <rect class="d d2" pathLength="1" x="124.25" y="66.25" width="193.5" height="193.5"/>
+    <use class="t" href="#g-ephg"/>
+  </svg>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#top" aria-label="EPHG Limited, back to top">
+      <svg class="mark" viewBox="99 41 245 245" aria-hidden="true"><use href="#g-shapes"/><use href="#g-ephg"/></svg>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#help">What's happened?</a>
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">Good to know</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-r">
+      <button class="theme" id="theme" type="button" aria-label="Switch to dark mode" title="Light / dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <a class="pill pill--white hdr-call" href="tel:+448000542519"><i class="dot live"></i>0800 054 2519</a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-top">
+    <svg class="mark" viewBox="99 41 245 245" aria-hidden="true"><use href="#g-shapes"/><use href="#g-ephg"/></svg>
+    <button class="menu-x" id="menu-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none"><use href="#ui-x"/></svg></button>
+  </div>
+  <nav aria-label="Menu">
+    <a style="--i:0" href="#help">What's happened?</a>
+    <a style="--i:1" href="#services">Services</a>
+    <a style="--i:2" href="#how">How it works</a>
+    <a style="--i:3" href="#faq">Good to know</a>
+    <a style="--i:4" href="#contact">Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a class="pill pill--amber" href="tel:+448000542519"><i class="dot"></i>Call 0800 054 2519</a>
+    <small>Emergency electrical, plumbing, heating and gas. 24/7.</small>
+  </div>
+</div>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-in" id="hero">
+    <div class="hero-copy">
+      <span class="status"><i class="dot live"></i>24/7 emergency call-out</span>
+      <h1 class="display">
+        <span class="ln" style="--i:0"><span>Something's</span></span>
+        <span class="ln" style="--i:1"><span>gone wrong.</span></span>
+        <span class="ln" style="--i:2"><span>We're <mark>on it.</mark></span></span>
+      </h1>
+      <p class="hero-sub" data-r style="--d:500ms">Emergency electrical, plumbing, heating and gas call-outs across much of the UK. One number, and the right engineer for the job.</p>
+      <div class="hero-cta" data-r style="--d:650ms">
+        <a class="pill pill--amber" href="tel:+448000542519"><i class="dot live"></i>Call 0800 054 2519</a>
+        <a class="pill pill--ghost" href="#help">What's happened? <svg class="go" viewBox="0 0 24 24" aria-hidden="true" style="fill:none"><use href="#ui-arrow"/></svg></a>
+      </div>
+      <p class="hero-note" data-r style="--d:800ms">Electrical &middot; Plumbing &middot; Heating &middot; Gas</p>
+    </div>
+    <div class="hero-art-wrap" data-r style="--d:300ms">
+      <div class="hero-art" id="heroArt">
+        <div data-art="hero" data-label="EPHG mark: a square turning inside a circle, with electrical, plumbing, heating and gas icons on its corners"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="At a glance">
+  <div class="strip-track">
+    <ul>
+      <li><i class="dot" style="background:var(--amber)"></i>24/7 call-out</li>
+      <li>Electrical</li><li>Plumbing</li><li>Heating &amp; boilers</li><li>Gas</li>
+      <li><b>Coverage</b>across much of the UK</li>
+      <li><b>Business origins</b>2008</li>
+      <li><b>Freephone</b>0800 054 2519</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li><i class="dot" style="background:var(--amber)"></i>24/7 call-out</li>
+      <li>Electrical</li><li>Plumbing</li><li>Heating &amp; boilers</li><li>Gas</li>
+      <li><b>Coverage</b>across much of the UK</li>
+      <li><b>Business origins</b>2008</li>
+      <li><b>Freephone</b>0800 054 2519</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ TRIAGE ============ -->
+<section class="sec" id="help">
+  <div class="wrap">
+    <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>Start here</span>
+    <h2 class="title" data-r style="--d:80ms">What's gone wrong?</h2>
+    <p class="lede" data-r style="--d:140ms">Pick the closest match. You'll get the first things to do while help is on the way.</p>
+    <div class="triage-grid">
+      <div class="tiles" role="tablist" aria-label="Type of emergency" id="tiles" data-r></div>
+      <div class="panel" id="panel" role="tabpanel" aria-live="polite" data-r style="--d:120ms"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto sec" id="about">
+  <div class="wrap mani-grid">
+    <div class="mani-art" data-art="ring" data-label="The EPHG mark, with the line 'Think outside the box but always stay within the circle' running around it"></div>
+    <div>
+      <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>Think outside the box</span>
+      <p class="stmt" id="stmt" style="margin-top:22px">When the power drops, a pipe bursts or the heating dies, you shouldn't have to work out who to call. One number, one team, the right engineer for the job, at any hour of the day or night.</p>
+      <div class="duo">
+        <div data-r><b>Outside the box</b><p>We look for what's actually wrong, not just the quick patch.</p></div>
+        <div data-r style="--d:120ms"><b>Within the circle</b><p>Safe working, and the right qualified engineer for each job.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>Services</span>
+        <h2 class="title" data-r style="--d:80ms">Four trades.<br>One number.</h2>
+      </div>
+      <a class="pill pill--ghost" data-r href="#contact">Get help now <svg class="go" viewBox="0 0 24 24" aria-hidden="true" style="fill:none"><use href="#ui-arrow"/></svg></a>
+    </div>
+    <ul class="svc-list" id="svcList"></ul>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how sec" id="how">
+  <div class="wrap">
+    <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>How it works</span>
+    <h2 class="title" data-r style="--d:80ms">From first call<br>to fixed.</h2>
+    <div class="frame" data-r>
+      <ol class="flow" id="flow">
+        <li style="--i:0"><span class="node">01</span><div><h3>You call, or ask for a call back</h3><p>Tell the team what's happened and where you are.</p></div></li>
+        <li style="--i:1"><span class="node">02</span><div><h3>We pin down the fault</h3><p>Electrician, plumber or Gas Safe heating engineer? We confirm which you need.</p></div></li>
+        <li style="--i:2"><span class="node">03</span><div><h3>Terms confirmed up front</h3><p>Coverage, rates and any call-out deposit are agreed before booking is finalised.</p></div></li>
+        <li style="--i:3"><span class="node">04</span><div><h3>An engineer attends</h3><p>Out to you to make things safe and get you back up and running.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOAD METERS ============ -->
+<section class="band sec" id="glance">
+  <div class="wrap">
+    <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>At a glance</span>
+    <h2 class="title" data-r style="--d:80ms">Support, day or night.</h2>
+    <div class="stats-grid">
+      <article class="meter-card" data-r>
+        <div class="big">24/7</div>
+        <div class="cap">Call-out service, every hour lit</div>
+        <div class="meter" id="m-hours" aria-hidden="true"></div>
+      </article>
+      <article class="meter-card" data-r style="--d:120ms">
+        <div class="big"><span data-count="4">4</span><small>trades</small></div>
+        <div class="cap">Electrical, plumbing, heating, gas</div>
+        <div class="meter icons" id="m-trades" aria-hidden="true"></div>
+      </article>
+      <article class="meter-card" data-r style="--d:240ms">
+        <div class="big"><span id="yrs" data-count="18">18</span><small>years</small></div>
+        <div class="cap">Business origins in 2008</div>
+        <div class="meter years" id="m-years" aria-hidden="true"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>Good to know</span>
+      <h2 class="title" data-r style="--d:80ms">Clear answers,<br>before you call.</h2>
+      <p class="lede" data-r style="--d:140ms">The basics of how a call-out works.</p>
+    </div>
+    <div class="faq" data-r style="--d:100ms">
+      <details open><summary>What happens when I call?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Tell the team what's happened. They'll talk through the issue, coverage and booking terms with you before arranging a call-out.</p></details>
+      <details><summary>Do I need an electrician or a heating engineer?<span class="plus" aria-hidden="true"></span></summary>
+        <p>For boiler or heating problems, EPHG will confirm whether an electrician or a Gas Safe heating engineer is the right person to send.</p></details>
+      <details><summary>Is there a call-out deposit?<span class="plus" aria-hidden="true"></span></summary>
+        <p>A call-out deposit and the applicable rates should be confirmed before a booking is finalised. Full details are in the <a href="https://ephg.limited/terms.html">terms</a>.</p></details>
+      <details><summary>Where do you cover?<span class="plus" aria-hidden="true"></span></summary>
+        <p>EPHG provides emergency electrical, plumbing, heating and gas call-out services across much of the UK. Call and check your postcode.</p></details>
+      <details><summary>What should I do while I wait?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Use the <a href="#help">quick guide</a> above. If there is a fire or someone is hurt, call 999. If you smell gas, leave the building and call the National Gas Emergency Service on 0800 111 999.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="band sec" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow" data-r><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>Get started</span>
+      <h2 class="cta-title" data-r style="--d:80ms">Need an<br>electrician?</h2>
+      <a class="bigtel" data-r style="--d:140ms" href="tel:+448000542519">0800 054 2519</a>
+      <address class="contact-list" data-r style="--d:180ms">
+        <a href="mailto:martin@ephg.limited">martin@ephg.limited</a>
+        <span>EPHG Limited &middot; 40 Royds Close, Tottington, BL8 3QD</span>
+      </address>
+      <p style="margin-top:28px;--d:220ms" data-r><a class="pill pill--amber" href="tel:+448000542519"><i class="dot live"></i>24/7 emergency call-out</a></p>
+    </div>
+    <div class="form-frame" data-r style="--d:120ms">
+      <h3>Request a call back</h3>
+      <form id="fm" novalidate>
+        <div><span class="lab" id="lab-topic">What's happened?</span>
+          <div class="chips" role="radiogroup" aria-labelledby="lab-topic" id="chips">
+            <label><input type="radio" name="topic" value="Electrical" checked><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-bolt"/></svg>Electrical</span></label>
+            <label><input type="radio" name="topic" value="Plumbing"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-tap"/></svg>Plumbing</span></label>
+            <label><input type="radio" name="topic" value="Heating"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-rad"/></svg>Heating</span></label>
+            <label><input type="radio" name="topic" value="Gas"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-flame"/></svg>Gas</span></label>
+          </div>
+        </div>
+        <div class="row2">
+          <div><label for="fn">Full name</label><input id="fn" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div><label for="fp">Phone</label><input id="fp" type="tel" autocomplete="tel" placeholder="07..."></div>
+        </div>
+        <div><label for="fe">Email (optional)</label><input id="fe" type="email" autocomplete="email" placeholder="you@email.com"></div>
+        <div><label for="ft">Tell us what's happened</label><textarea id="ft" rows="3" placeholder="For example: the power has tripped, your postcode, and when it started"></textarea></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="pill pill--solid" type="submit" id="fs">Request a call back <svg class="go" viewBox="0 0 24 24" aria-hidden="true" style="fill:none"><use href="#ui-arrow"/></svg></button>
+        <p class="fine">Demo form. It doesn't send anything to EPHG.</p>
+      </form>
+      <div class="ok" id="ok" role="status"><i><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none"><use href="#ui-check"/></svg></i><b>Request received</b><p id="okp"></p><button class="pill pill--ghost" type="button" id="again">Send another</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="band">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <svg class="lockup" viewBox="46 2 350 316" role="img" aria-label="EPHG Limited. Think outside the box but always stay within the circle."><use href="#g-shapes"/><use href="#g-face"/><use href="#g-icons"/><use href="#g-ephg"/><use href="#g-limited"/><use href="#g-tag"/></svg>
+        <p class="foot-blurb">Emergency electrical, plumbing, heating and gas call-out services across much of the UK.</p>
+      </div>
+      <nav aria-label="Services"><h4>Services</h4><ul><li><a href="#services">Electrical faults &amp; repairs</a></li><li><a href="#services">Plumbing</a></li><li><a href="#services">Heating &amp; boilers</a></li><li><a href="#services">Gas</a></li></ul></nav>
+      <nav aria-label="Support"><h4>Support</h4><ul><li><a href="#help">What's happened?</a></li><li><a href="#how">How it works</a></li><li><a href="#faq">Good to know</a></li><li><a href="#contact">Contact details</a></li></ul></nav>
+      <nav aria-label="Company"><h4>Company</h4><ul><li><a href="https://ephg.limited/about-ephg.html">About EPHG</a></li><li><a href="https://ephg.limited/24-hour-electrician.html">Original website</a></li><li><a href="https://ephg.limited/terms.html">Terms</a></li><li><a href="https://ephg.limited/contact.html">Contact</a></li></ul></nav>
+    </div>
+    <div class="foot-bar">
+      <span>Independent redesign concept for EPHG Limited. Not the official website.</span>
+      <nav aria-label="Legal"><a href="https://ephg.limited/">ephg.limited</a><a href="https://ephg.limited/terms.html">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar" id="callbar"><a class="pill pill--amber" href="tel:+448000542519"><i class="dot live"></i>Call 0800 054 2519</a></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,e){return (e||document).querySelector(s)},$$=function(s,e){return Array.prototype.slice.call((e||document).querySelectorAll(s))};
+var root=document.documentElement;
+var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var clamp=function(v,a,b){return Math.min(b,Math.max(a,v))};
+var ICON={elec:'ic-bolt',plumb:'ic-tap',heat:'ic-rad',gas:'ic-flame'};
+
+/* ---------- Theme toggle (circle wipe, remembers choice) ---------- */
+var themeBtn=$('#theme'),metaTheme=$('meta[name=theme-color]');
+function applyTheme(t,save){
+  root.setAttribute('data-theme',t);
+  themeBtn.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');
+  if(metaTheme)metaTheme.content=t==='dark'?'#14110e':'#f2efe9';
+  if(save){try{localStorage.setItem('ephg-theme',t)}catch(e){}}
+}
+applyTheme(root.getAttribute('data-theme'),false);
+themeBtn.addEventListener('click',function(){
+  var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  if(!document.startViewTransition||reduced){applyTheme(next,true);return}
+  var r=themeBtn.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;
+  var R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+  var tr=document.startViewTransition(function(){applyTheme(next,true)});
+  tr.ready.then(function(){
+    root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},
+      {duration:700,easing:'cubic-bezier(.4,0,.2,1)',pseudoElement:'::view-transition-new(root)'});
+  }).catch(function(){});
+});
+if(window.matchMedia){
+  var mq=matchMedia('(prefers-color-scheme: dark)'),follow=function(e){var s;try{s=localStorage.getItem('ephg-theme')}catch(x){}if(!s)applyTheme(e.matches?'dark':'light',false)};
+  if(mq.addEventListener)mq.addEventListener('change',follow);
+}
+
+/* ---------- Animated EPHG art (square turns inside the circle) ---------- */
+var K=2.27,R=262,H=219.6,uid=0;
+var CORNERS=[['ic-bolt',-1,-1],['ic-tap',1,-1],['ic-rad',1,1],['ic-flame',-1,1]];
+function artSVG(mode,label){
+  var ring=mode==='ring',id='rp'+(uid++);
+  var vb=ring?'-392 -392 784 784':'-352 -366 704 722';
+  var s='<svg class="art" viewBox="'+vb+'" role="img" aria-label="'+label+'">';
+  if(ring){
+    var txt='THINK OUTSIDE THE BOX · BUT ALWAYS STAY WITHIN THE CIRCLE · ';
+    s+='<defs><path id="'+id+'" d="M-352 0a352 352 0 1 1 704 0a352 352 0 1 1-704 0"/></defs>'
+      +'<g class="ringg"><text style="font:400 26px var(--mono);fill:currentColor" textLength="2200" lengthAdjust="spacing"><textPath href="#'+id+'">'+txt+txt+'</textPath></text></g>';
+  }
+  s+='<circle r="'+R+'" fill="none" stroke="currentColor" stroke-width="7"/>'
+   +'<circle class="arc" r="'+R+'" fill="none" stroke="var(--amber)" stroke-width="7" stroke-linecap="round" stroke-dasharray="96 1550"/>'
+   +'<g transform="scale('+K+') translate(-221.3 -163)"><use href="#g-icons"/><use href="#g-ephg"/><use href="#g-limited"/>'+(ring?'':'<use href="#g-face"/>')+'</g>'
+   +'<g class="sq"><rect x="-'+H+'" y="-'+H+'" width="'+2*H+'" height="'+2*H+'" fill="none" stroke="currentColor" stroke-width="7"/>';
+  if(!ring){
+    CORNERS.forEach(function(c){
+      s+='<g class="bd" data-x="'+c[1]*H+'" data-y="'+c[2]*H+'" transform="translate('+c[1]*H+' '+c[2]*H+')"><circle r="31" fill="currentColor"/>'
+        +'<use href="#'+c[0]+'" x="-15" y="-15" width="30" height="30" style="fill:var(--bg)"/></g>';
+    });
+  }
+  return s+'</g></svg>';
+}
+var arts=$$('[data-art]').map(function(el){
+  var mode=el.getAttribute('data-art');
+  el.innerHTML=artSVG(mode,el.getAttribute('data-label')||'EPHG');
+  return {el:el,mode:mode,sq:$('.sq',el),arc:$('.arc',el),ring:$('.ringg',el),bds:$$('.bd',el),vis:true};
+});
+if('IntersectionObserver' in window){
+  var vio=new IntersectionObserver(function(es){es.forEach(function(e){arts.forEach(function(a){if(a.el===e.target)a.vis=e.isIntersecting})})},{rootMargin:'100px'});
+  arts.forEach(function(a){vio.observe(a.el)});
+}
+function drawArt(a,t){
+  var ang;
+  if(reduced){ang=0}
+  else if(a.mode==='hero'){ang=t*0.0075+scrollY*0.05}
+  else{var r=a.el.getBoundingClientRect();ang=clamp((innerHeight-r.top)/(innerHeight+r.height),0,1)*150+t*0.004}
+  a.sq.setAttribute('transform','rotate('+ang.toFixed(2)+')');
+  a.bds.forEach(function(b){b.setAttribute('transform','translate('+b.getAttribute('data-x')+' '+b.getAttribute('data-y')+') rotate('+(-ang).toFixed(2)+')')});
+  if(!reduced){a.arc.setAttribute('transform','rotate('+(t*0.045).toFixed(2)+')');if(a.ring)a.ring.setAttribute('transform','rotate('+(-t*0.006).toFixed(2)+')')}
+}
+
+/* ---------- Scroll work: progress bar, header, call bar, word reveal, flow ---------- */
+var stmt=$('#stmt');
+if(stmt){stmt.innerHTML=stmt.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>'}).join(' ')}
+var words=$$('.w',stmt||document.body),hdr=$('#hdr'),prog=$('#progress'),callbar=$('#callbar'),hero=$('#hero');
+function onScroll(){
+  var h=root.scrollHeight-innerHeight,y=scrollY;
+  prog.style.setProperty('--p',h>0?(y/h).toFixed(4):0);
+  hdr.classList.toggle('stuck',y>8);
+  callbar.classList.toggle('show',y>hero.offsetHeight*.8);
+  if(words.length){
+    var r=stmt.getBoundingClientRect(),p=clamp((innerHeight*.85-r.top)/(r.height+innerHeight*.25),0,1),n=Math.round(p*words.length);
+    for(var i=0;i<words.length;i++){words[i].classList.toggle('on',i<n)}
+  }
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+function loop(t){for(var i=0;i<arts.length;i++){if(arts[i].vis)drawArt(arts[i],t)}requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+/* pointer parallax on hero art */
+if(!reduced&&matchMedia('(hover:hover)').matches){
+  var ha=$('#heroArt');
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();ha.style.setProperty('--px',((e.clientX-r.left)/r.width-.5).toFixed(3));ha.style.setProperty('--py',((e.clientY-r.top)/r.height-.5).toFixed(3))});
+}
+
+/* ---------- Triage ---------- */
+var TRIAGE=[
+ {k:'elec',t:'Power fault',s:'Tripping, no power, sparks',h:"Lights out or something's tripping",who:'An electrician',topic:'Electrical',
+  steps:['Switch off the affected appliances and, if it is safe to reach, the circuit or main switch at your consumer unit.','Keep clear of anything sparking, hot or wet, and keep people and pets away from it.','Fire, smoke or someone hurt? Call 999 first.']},
+ {k:'plumb',t:'Leak or burst',s:'Water where it should not be',h:'Water is where it should not be',who:'A plumbing engineer',topic:'Plumbing',
+  steps:['Turn off the stop tap to stop the flow. It is usually under the kitchen sink.','If water is near sockets or light fittings, switch off the electricity at the consumer unit, only if it is safe to reach.','Catch what you can in buckets and move valuables out of the way.']},
+ {k:'heat',t:'No heating',s:'Boiler or hot water down',h:'The heating or hot water has stopped',who:'An electrician or a Gas Safe heating engineer. EPHG confirms which when you call.',topic:'Heating',
+  steps:['Check the thermostat and timer are set as expected, and that the boiler has power.','Do not open the boiler or try to repair gas parts yourself.','If you can smell gas, treat it as a gas emergency instead.']},
+ {k:'gas',t:'Smell of gas',s:'Act first, then call',h:'You can smell gas',who:'Gas emergencies go to the National Gas Emergency Service first. Call EPHG afterwards for repairs.',topic:'Gas',
+  steps:['Open doors and windows. Do not use light switches, naked flames or anything that could spark.','Turn off the gas at the meter, only if you can safely reach it.','Leave the building and call the National Gas Emergency Service on 0800 111 999. It is free and open 24 hours.']}
+];
+var tiles=$('#tiles'),panel=$('#panel'),cur=0;
+tiles.innerHTML=TRIAGE.map(function(x,i){
+  return '<button class="tile" type="button" role="tab" id="tab-'+x.k+'" aria-selected="'+(i===0)+'" aria-controls="panel" tabindex="'+(i===0?0:-1)+'" data-i="'+i+'"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#'+ICON[x.k]+'"/></svg><span><b>'+x.t+'</b><small>'+x.s+'</small></span></button>';
+}).join('');
+function showTriage(i,focus,animate){
+  cur=i;var x=TRIAGE[i];
+  $$('.tile',tiles).forEach(function(b,j){b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1;if(focus&&j===i)b.focus()});
+  panel.setAttribute('aria-labelledby','tab-'+x.k);
+  panel.innerHTML='<span class="eyebrow" style="align-self:flex-start"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#'+ICON[x.k]+'"/></svg>Do this first</span>'
+   +'<h3>'+x.h+'</h3><ol class="steps">'+x.steps.map(function(s){return '<li>'+s+'</li>'}).join('')+'</ol>'
+   +'<div class="who"><span class="mono">Who we send</span><b>'+x.who+'</b></div>'
+   +'<div class="panel-cta"><a class="pill pill--amber" href="tel:+448000542519"><i class="dot live"></i>Call 0800 054 2519</a><a class="pill pill--ghost" href="#contact" data-topic="'+x.topic+'">Request a call back</a></div>'
+   +'<p class="fine">Demo wording. EPHG to review all safety copy before launch.</p>';
+  if(animate){panel.classList.remove('pop');void panel.offsetWidth;panel.classList.add('pop')}
+}
+tiles.addEventListener('click',function(e){var b=e.target.closest('.tile');if(b)showTriage(+b.getAttribute('data-i'),false,true)});
+tiles.addEventListener('keydown',function(e){
+  var d={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];
+  if(d){e.preventDefault();showTriage((cur+d+TRIAGE.length)%TRIAGE.length,true,true)}
+});
+showTriage(0,false,false);
+
+/* ---------- Services list ---------- */
+var AR='<svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none"><use href="#ui-arrow"/></svg>';
+var FX={
+ elec:'',plumb:'<circle class="drop" cx="6" cy="22" r="1.3"/><circle class="drop" cx="12" cy="22" r="1.3"/><circle class="drop" cx="18" cy="22" r="1.3"/>',
+ heat:'<path class="wave" d="M7 2c-1.5-1 1.5-2 0-3.2"/><path class="wave" d="M12 2c-1.5-1 1.5-2 0-3.2"/><path class="wave" d="M17 2c-1.5-1 1.5-2 0-3.2"/>',gas:''
+};
+var SVC=[
+ {k:'elec',t:'Electrical faults & repairs',d:'Power loss, tripping consumer units and urgent electrical faults, with repairs subject to assessment.',tags:['Power loss','Tripping','Faults','Repairs'],topic:'Electrical',cls:'fx-bolt'},
+ {k:'plumb',t:'Plumbing',d:'Emergency plumbing call-outs, coordinated by EPHG.',tags:['Leaks','Burst pipes','Urgent call-outs'],topic:'Plumbing',cls:''},
+ {k:'heat',t:'Heating & boilers',d:"Not sure if it is an electrical or a heating fault? We confirm whether you need an electrician or a Gas Safe heating engineer.",tags:['Boilers','No heating','No hot water'],topic:'Heating',cls:''},
+ {k:'gas',t:'Gas',d:'Emergency gas call-outs, coordinated by EPHG. If you smell gas, call 0800 111 999 first.',tags:['Gas emergencies','Call-outs'],topic:'Gas',cls:'fx-flame'}
+];
+$('#svcList').innerHTML=SVC.map(function(s,i){
+  return '<li data-r style="--d:'+i*80+'ms"><a class="svc" href="#contact" data-topic="'+s.topic+'"><span class="n">0'+(i+1)+'</span>'
+   +'<span class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use class="'+s.cls+'" href="#'+ICON[s.k]+'"/>'+FX[s.k]+'</svg></span>'
+   +'<span><h3>'+s.t+'</h3><p>'+s.d+'</p><span class="tags mono">'+s.tags.map(function(t){return '<span>'+t+'</span>'}).join('')+'</span></span>'
+   +'<span class="svc-go">'+AR+'</span></a></li>';
+}).join('');
+
+/* clicking a service or triage CTA pre-selects the topic in the form */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-topic]');if(!a)return;
+  var r=$('input[name=topic][value="'+a.getAttribute('data-topic')+'"]');if(r)r.checked=true;
+});
+
+/* ---------- Load meters ---------- */
+var hrs=$('#m-hours'),i;
+for(i=0;i<24;i++){hrs.insertAdjacentHTML('beforeend','<i style="--k:'+i+'"></i>')}
+var tr=$('#m-trades');
+['ic-bolt','ic-tap','ic-rad','ic-flame'].forEach(function(n,k){tr.insertAdjacentHTML('beforeend','<i style="--k:'+k*4+'"><svg viewBox="0 0 24 24"><use href="#'+n+'"/></svg></i>')});
+var yrs=Math.max(1,new Date().getFullYear()-2008),ym=$('#m-years');
+$('#yrs').textContent=yrs;$('#yrs').setAttribute('data-count',yrs);
+for(i=0;i<yrs;i++){ym.insertAdjacentHTML('beforeend','<i style="--k:'+i*1.2+'"></i>')}
+
+/* ---------- Reveals (+ counters, meters, flow line) ---------- */
+function countUp(el){
+  var to=+el.getAttribute('data-count'),t0=null;
+  if(reduced){el.textContent=to;return}
+  (function step(t){if(t0===null)t0=t;var p=clamp((t-t0)/1200,0,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(step)})(performance.now());
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;var t=e.target;t.classList.add('in');io.unobserve(t);
+  $$('[data-count]',t).forEach(countUp);
+  $$('.meter',t).forEach(function(m){m.classList.add('in')});
+  if(t.id==='flow'||$('#flow',t)){var f=t.id==='flow'?t:$('#flow',t);f.classList.add('in');f.style.setProperty('--fp',1)}
+})},{threshold:.18});
+$$('[data-r]').forEach(function(el){io.observe(el)});
+
+/* ---------- Menu ---------- */
+var menu=$('#menu'),burger=$('#burger');
+function menuSet(open){
+  menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',!open);burger.setAttribute('aria-expanded',open);
+  document.body.classList.toggle('noscroll',open);
+  if(open)$('#menu-x').focus();else if(document.activeElement&&menu.contains(document.activeElement))burger.focus();
+}
+burger.addEventListener('click',function(){menuSet(true)});
+$('#menu-x').addEventListener('click',function(){menuSet(false)});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))menuSet(false)});
+addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))menuSet(false)});
+
+/* ---------- Form (demo only) ---------- */
+var fm=$('#fm'),ok=$('#ok');
+fm.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=$('#fn').value.trim(),p=$('#fp').value.trim(),em=$('#fe').value.trim(),err=$('#err');
+  if(!n||(!p&&!em)){err.textContent=!n?'Please add your name so we know who to ask for.':'Please add a phone number or an email so we can reach you.';(!n?$('#fn'):$('#fp')).focus();return}
+  err.textContent='';
+  $('#okp').textContent='Thanks, '+n.split(' ')[0]+'. This is a demo form, so nothing has been sent to EPHG. In an emergency, call 0800 054 2519.';
+  fm.style.display='none';ok.classList.add('show');
+});
+$('#again').addEventListener('click',function(){fm.reset();fm.style.display='';ok.classList.remove('show');$('#fn').focus()});
+
+/* ---------- Loader + start ---------- */
+var ld=$('#ld'),started=false;
+function start(){
+  if(started)return;started=true;
+  setTimeout(function(){
+    root.classList.add('ready');ld.classList.add('done');
+    setTimeout(function(){if(ld.parentNode)ld.parentNode.removeChild(ld)},1000);
+  },reduced?60:1500);
+}
+if(document.readyState==='complete')start();else addEventListener('load',start);
+setTimeout(start,2400);
+})();
+</script>
+</body>
+</html>
